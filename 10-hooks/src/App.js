@@ -1,25 +1,25 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from "react";
 
-function App() {
+const App = () => {
+  const [counter, setCounter] = useState(1);
+  const [name, setName] = useState("Alan");
+  const [toggle, setToggle] = useState("Billy");
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <h1>Contagem: {counter}</h1>
+      <h1>Nome: {name}</h1>
+      <h1>Alternar: {toggle ? "VERDADEIRO" : "FALSO"}</h1>
+      <button onClick={() => setCounter(counter + 1)}>Aumentar</button>
+      <button onClick={() => setCounter(counter - 1)}>Diminuir</button>
+      <br />
+      <br />
+      <button onClick={() => setName("Karoline")}>Alterar Nome</button>
+      <br />
+      <br />
+      <button onClick={() => setToggle(!toggle)}>Alternar</button>
     </div>
   );
-}
+};
 
 export default App;
